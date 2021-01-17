@@ -1,0 +1,11 @@
+on:
+  release:
+    types:
+      - released
+jobs:
+  deploy-prod:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: |
+        env
+        echo "deploy release"
