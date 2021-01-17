@@ -1,0 +1,17 @@
+on:
+  release:
+    types:
+      - created
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - id: lint
+        run: echo "lint new release"
+      - id: build
+        run: echo "build new release"
+  deploy-stage:
+    runs-on: ubuntu-20.04
+    needs: build
+    steps:
+      - run: echo "deploy release"
